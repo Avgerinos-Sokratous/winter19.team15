@@ -60,7 +60,7 @@
                     Announcements
                 </span>
                 <span align-text:left; style="font-size: 26px">
-                    Post Announcement
+                    Write Your Announcement
                 </span>
                   <label class="label-input100" for="subject">Subject *</label>
                 <div class="wrap-input100 validate-input" data-validate="Subject is required">

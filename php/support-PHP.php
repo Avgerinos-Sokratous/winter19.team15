@@ -63,7 +63,7 @@ else
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/supportTest.php';
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      

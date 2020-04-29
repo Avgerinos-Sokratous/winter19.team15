@@ -22,6 +22,7 @@
         $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navTrainer.php");
     });
     </script>
+	<script src="./js/memb.js"></script>
     <title>Ironsky Fitness</title>
     <link rel="shortcut icon" href="images/ironsky2.png" type="image/png">
     <link href="css/main.css" rel="stylesheet">
