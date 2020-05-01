@@ -201,7 +201,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -234,7 +234,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -265,7 +265,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -284,7 +284,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -303,7 +303,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -322,7 +322,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 
@@ -341,7 +341,7 @@
            success: function(data) 
            {  
               var pos = data.indexOf("<h1");  
-              var pos1 = data.lastIndexOf("rules"); 
+              var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
               for (j = pos; j < pos1+25; j++) 

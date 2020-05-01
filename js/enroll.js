@@ -38,6 +38,13 @@ function passItem(el) {
     col.style="width:auto;";
     col.innerHTML="Enrollment";     
     var e = document.getElementById(el).value;
+    if(e=="hide"){
+      document.getElementById('warn').style.color="red";
+      document.getElementById('warn').style.visibility="visible";
+      return;
+    }else{
+      document.getElementById('warn').style.visibility="hidden";
+    }
     var weekday = new Array(7);
     weekday[0] = "Sunday";
     weekday[1] = "Monday";
@@ -108,7 +115,7 @@ function passItem(el) {
                     if (c == 5) {
                         y = row.insertCell(-1);
                         var check=true;
-                        if (v != 0) {
+                        
                           var cl = document.getElementById('Classes').rows[i + 1].cells[0].innerHTML;
                           console.log(cl);
                           console.log(ar[1]);
@@ -149,6 +156,7 @@ function passItem(el) {
                           });
                           y.appendChild(unbtn);
                         }else{
+                          if(v!=0){
                             var btn = document.createElement('input');
                             btn.type = "button";
                             btn.className = "btn btn-primary";
@@ -161,6 +169,7 @@ function passItem(el) {
                                     type: 'POST',
                                     data: { id: t , datediff: diff },
                                     success: function (data) {
+                                        console.log(data);
                                         if (data == 1) {
                                             var pl = document.getElementById('Classes').rows[i + 1].cells[5];
                                             var num = document.getElementById('Classes').rows[i + 1].cells[5].innerHTML;
@@ -175,8 +184,46 @@ function passItem(el) {
                                             }, function(){
                                                   window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/enroll.php';
                                             }); 
-                                                 
+                                        }else{
+                                          var reason='';
+                                          switch(parseInt(data)) {
+                                            case (-1):{
+                                              reason="Already Enrolled";
                                               
+                                            }
+                                            break;
+                                            case (-2):{
+                                              reason="No available places";
+                                              
+                                            }
+                                            break;
+                                            case (-3):{
+                                              reason="You have already enrolled 3 times for that week";
+                                              
+                                            }
+                                            break;
+                                            case (-4):{
+                                              reason="You are not allowed to enroll, your membership is Open Gym";
+                                              
+                                            }
+                                            break;
+                                            default:{
+                                              reason="Could Not enroll";
+                                              
+                                            }
+                                            break;
+                                          }
+                                          
+                                          
+                                          swal({
+                                            title: 'Enrollment',
+                                            text: 'Failed to Enroll '+reason,
+                                            type: 'error',
+                                          
+                                            showConfirmButton: true
+                                          }, function(){
+                                                window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/enroll.php';
+                                          }); 
                                         }
                                     }
                                 });
@@ -184,6 +231,7 @@ function passItem(el) {
                             y.appendChild(btn);
                           }
                         }
+                        
                         y = row.insertCell(-1);
                         var img = document.createElement('img');
                         img.src = "images/bar.jpg";

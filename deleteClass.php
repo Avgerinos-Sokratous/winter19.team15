@@ -269,7 +269,7 @@ while($row = mysqli_fetch_assoc($result)) {
         $("#submit").on("click", function (e) {    
                 $("table td").each(function () {
                     if ($(this).hasClass("checked")) {
-                    console.log("eprepe na mpi meston positions")
+                    //console.log("eprepe na mpi meston positions")
                         positionsR.push($(this).attr("data-position"));
                     }      
                                    

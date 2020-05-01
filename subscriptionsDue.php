@@ -298,7 +298,7 @@ while($row = mysqli_fetch_assoc($result)) {
                     type: "POST",
                     data: { customer_id:updatedCustomers[0],customer_membership:updatedCustomers[1]},
                     success: function(data){
-                    console.log(updatedCustomers);
+                    //console.log(updatedCustomers);
                     }
                 });
             

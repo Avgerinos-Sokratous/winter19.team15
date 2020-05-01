@@ -54,6 +54,7 @@
 
                 </select>
                 <button id="show_button" onClick="passItem('selectDay');"><i class="fa fa-search"></i></button>
+                <label id="warn" class="warning" style="visibility: hidden;">Please select day!</label>
                 <table class="table" id="Classes" style="background-color:white;">
                     
                 </table>

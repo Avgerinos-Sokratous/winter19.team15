@@ -93,7 +93,7 @@ else
         $message = "All you data has been deleted.";
  	mail($to, $subject, $message, $headers);
 
-	echo "<script>setTimeout(\"location.href = ' http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/clientData.html';\",500);</script>";
+	echo "<script>setTimeout(\"location.href = ' http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/clientData.php';\",500);</script>";
 }
 
 ?>

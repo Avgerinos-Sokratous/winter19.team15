@@ -60,12 +60,6 @@
                     <span class="focus-input100"></span>
                 </div>
                 
-                 <label class="label-input100" for="email">Enter trainer email *</label>
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input id="email" class="input100" type="text" name="emailTrainer" placeholder="Eg. example@email.com">
-                    <span class="focus-input100"></span>
-                </div>
-                
                   <label class="label-input100" for="subject">Subject *</label>
                 <div class="wrap-input100 validate-input" data-validate="Subject is required">
                     <input id="subject" class="input100" name="subject" placeholder="Write title of Subject">
@@ -193,7 +187,7 @@ if(array_key_exists('submit', $_POST)) {
             include 'php/connectDB.php';
 
 $emailCustomer=$_POST["emailCustomer"];
-$emailTrainer=$_POST["emailTrainer"];
+$emailTrainer='sloizi02@cs.ucy.ac.cy';
 $subject=$_POST["subject"];
 $message=$_POST["message"];
 

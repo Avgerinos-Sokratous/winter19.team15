@@ -46,7 +46,7 @@
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
 
-    <!-- START OF CONTAINER FOR NEW REGISTER -->
+    <!-- START OF CONTAINER FOR NEW REGISTER of client -->
     <div class="container">
         <div class="row py-3">
             <div class="col-sm-8 mx-auto">
@@ -79,8 +79,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="input5">Membership</label>
-                                <select name="Membership" id="Memb">
-                                    <option selected value="hide">--Please Select--</option>
+                                <select name="Membership" id="Memb" required>
+                                <option value="">--Please Select--</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -93,37 +93,41 @@
             </div>
         </div>
     </div>
-    <!-- END OF CONTAINER FOR FOR NEW REGISTER -->
-    <!-- START OF CONTAINER FOR ANNOUNCEMENT -->
+    <!-- END OF CONTAINER FOR FOR NEW REGISTER of client -->
+    <!-- START OF CONTAINER FOR ANNOUNCEMENT of trainer -->
     <div class="container">
         <div class="row py-3">
             <div class="col-sm-8 mx-auto">
-                <!-- form card register -->
+                <!-- form card new register -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="mb-0">Post Announcement</h3>
+                        <h3 class="mb-0">Register New Trainer</h3>
                     </div>
                     <div class="card-body">
-                        <form class="form" role="form" autocomplete="off">
+                        <form class="form" role="form" id="RegisterForm" autocomplete="off" method="post">
                             <div class="form-group">
-                                <label for="input5">Title</label>
-                                <input type="text" class="form-control" id="input4" placeholder="Title" required="" />
+                                <label for="input5">Name</label>
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="First Name" required="" />
                             </div>
                             <div class="form-group">
-                                <label for="input5">Subject</label>
-                                <input type="text" class="form-control" id="input4" placeholder="Subject" required="" />
+                                <label for="input5">Email</label>
+                                <input type="email" class="form-control" aria-describedby="emailHelp" id="Email" name="Email" placeholder="Email" required="" />
                             </div>
                             <div class="form-group">
-                                <label for="input5">Description</label>
-                                <textarea class="form-control" id="input5"></textarea>
+                                <label for="input5">Address</label>
+                                <input type="text" class="form-control" id="Address" name="Address" placeholder="Address" required="" />
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-lg float-right">Post</button>
+                                <label for="input5">Phone</label>
+                                <input type="number" class="form-control" id="Phone" name="Phone" placeholder="Phone Number" required="" />
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="registerTrainer" onsubmit="RegisterNew()" class="btn btn-success btn-lg float-right">Register</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!-- /form card register -->
+                <!-- /form card register trainer -->
             </div>
         </div>
     </div>
@@ -138,6 +142,10 @@ $address=$_POST["Address"];
 $tele=$_POST["Phone"];
 $email=$_POST["Email"];
 $memb=$_POST["Membership"];
+
+if($memb==''){
+    exit();
+}
 
 $query = "SELECT * FROM Customer";
 $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
@@ -172,10 +180,77 @@ $hash = password_hash($pass, PASSWORD_DEFAULT);
 $sql="INSERT INTO Customer (Name,Surname,Address,Telephone,Email,Password) VALUES ('$name','$surname','$address','$tele','$email','$hash')";
 mysqli_query($conn,$sql);
 $last_id=$conn->insert_id;
-$today = date("Y-m-d");
-$date = date('Y-m-d', strtotime('+1 month', $today));
-$reg="INSERT INTO Memberships (CustomerID,ExpirationDate,Type) VALUES ($last_id,DATE_ADD(CURDATE(),INTERVAL 1 MONTH),'$memb')";
+$sql="SELECT Duration FROM Membership_Types WHERE Type='".$memb."'";
+$result=mysqli_query($conn,$sql);
+$row = mysqli_fetch_assoc($result);
+$dur=$row['Duration'];
+$reg="INSERT INTO Memberships (CustomerID,ExpirationDate,Type) VALUES ($last_id,DATE_ADD(CURDATE(),INTERVAL ".$dur." MONTH),'$memb')";
 $result=mysqli_query($conn,$reg);
+$conn->close();
+
+$subject='Account Activation';
+$message='Hello ' . $name . '
+Your Account has been activated. Your username is: ' . $email . '
+and your password is: ' . $pass . '
+Welcome to ironsky'.'
+We recommend that you change your password';
+$headers = "From: ironsky";
+mail($email,$subject,$message,$headers);
+
+echo "<script> 
+              swal({
+  title: 'Success!',
+  text: 'User registered successfully',
+  type: 'success',
+
+  showConfirmButton: true
+}, function(){
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+}); 
+     $('.sweet-overlay').css('background-color','#1E4072');
+      </script>";
+
+ }   
+    if(array_key_exists('registerTrainer', $_POST)) { 
+            include 'php/connectDB.php';
+
+$name=$_POST["Name"];
+$address=$_POST["Address"];
+$tele=$_POST["Phone"];
+$email=$_POST["Email"];
+
+$query = "SELECT * FROM Trainer";
+$result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+
+while($row = mysqli_fetch_assoc($result)) {
+    $emaildb = $row['Email'];
+    
+    if($email === $emaildb) {
+       
+        echo "<script> 
+       swal({
+  title: 'This email already exists',
+  text: 'Try a different one.',
+  type: 'error',
+
+  showConfirmButton: true
+}, function(){
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+}); 
+     $('.sweet-overlay').css('background-color','#1E4072');
+     
+      </script>"; 
+      
+        exit();
+    }
+}
+
+
+$pass=generateRandomString();
+$hash = password_hash($pass, PASSWORD_DEFAULT);
+
+$sql="INSERT INTO Trainer (Name,Address,Telephone,Password,Email) VALUES ('$name','$address','$tele','$hash','$email')";
+mysqli_query($conn,$sql);
 $conn->close();
 
 $subject='Account Activation';

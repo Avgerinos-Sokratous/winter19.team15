@@ -47,7 +47,7 @@
                 <!-- form card new register -->
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="mb-0">Retrive Client Data</h3>
+                        <h3 class="mb-0">Retrieve Client Data</h3>
                     </div>
                     <div class="card-body">
                         <form class="form" role="form" id="RetriveForm" autocomplete="off" action="php/retriveClientData.php" method="post">
@@ -60,7 +60,7 @@
                                 <input type="password" class="form-control" aria-describedby="emailHelp" id="Password" name="Password" placeholder="password" required />
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-lg float-right">Retrive</button>
+                                <button type="submit" class="btn btn-success btn-lg float-right">Retrieve</button>
                             </div>
                         </form>
                     </div>
