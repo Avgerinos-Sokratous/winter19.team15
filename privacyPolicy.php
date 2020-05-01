@@ -197,6 +197,7 @@
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Name to be appointed</font></font></p>
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tel .: to be appointed ,</font></font></p>
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: </font></font><a href="to be appointed"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to be appointed @</font></font></a></p>
+<a href="http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php" style="float:right;" class="btn btn-info" role="button">Go to Site</a>
 </div>
 
 <!--                    	

@@ -36,16 +36,13 @@ include 'initSesh.php';
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="main.php" tabindex="-1">Home </a>
+                    <a class="nav-link" href="pastPrograms.php" tabindex="-1">Programs </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="announcements-client.html" tabindex="-1">Announcements</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="memberships.php" tabindex="-1">Memberships</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="pastPrograms.php" tabindex="-1">Past Programs</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="clientNutrition.php" tabindex="-1">Nutritional Calculator</a>

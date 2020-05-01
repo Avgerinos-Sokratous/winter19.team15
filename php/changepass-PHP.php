@@ -94,6 +94,50 @@ Your password has changed.';
             }
         }
         if($flag==0){
+        $query = "SELECT * FROM Trainer";
+        $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            $emaildb = $row['Email'];
+            
+            if($email === $emaildb) {
+            
+                $flag=1;
+                $hash = password_hash($newpassword, PASSWORD_DEFAULT);
+                $sql = "UPDATE Customer SET Password='$hash' WHERE Email='$email'";
+        
+                if ($conn->query($sql) === TRUE) {
+                $name= $row['Name'];
+                
+                $subject='Password Changed';
+                $message='Helllo, '. $name. '.
+Your password has changed.';
+                $headers = "From: ironsky";
+                
+                
+                
+                mail($email,$subject,$message,$headers);
+    
+                    echo "<script> 
+                  swal({
+                        title: 'Password Updated!',
+                        text: 'Your password has been updated.',
+                        type: 'success',
+                      
+                        showConfirmButton: true
+                      }, function(){
+                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                      }); 
+                           $('.sweet-overlay').css('background-color','#1E4072');
+                            </script>";
+                        exit();
+                } else {
+                    echo "Error updating record: " . $conn->error;
+                }
+            }
+        }
+        }
+        if($flag==0){
         echo "<script> 
               swal({
     title: 'Email not found!',

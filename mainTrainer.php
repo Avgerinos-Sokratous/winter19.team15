@@ -30,6 +30,11 @@
 
 <body style="background-color:#1E4072;" onload="fill()">
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- START OF NAVIGATION BAR -->
 
     <div id="includedContent"></div>
@@ -51,7 +56,7 @@
                         <h3 class="mb-0">Register New Customer</h3>
                     </div>
                     <div class="card-body">
-                        <form class="form" role="form" id="RegisterForm" autocomplete="off" action="php/register.php" method="post">
+                        <form class="form" role="form" id="RegisterForm" autocomplete="off" method="post">
                             <div class="form-group">
                                 <label for="input5">Name</label>
                                 <input type="text" class="form-control" id="Name" name="Name" placeholder="First Name" required="" />
@@ -79,7 +84,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button type="submit" onsubmit="RegisterNew()" class="btn btn-success btn-lg float-right">Register</button>
+                                <button type="submit" name="register" onsubmit="RegisterNew()" class="btn btn-success btn-lg float-right">Register</button>
                             </div>
                         </form>
                     </div>
@@ -123,7 +128,91 @@
         </div>
     </div>
     <!-- END OF CONTAINER FOR ANNOUNCEMENT -->
+     <?php
+    if(array_key_exists('register', $_POST)) { 
+            include 'php/connectDB.php';
 
+$name=$_POST["Name"];
+$surname=$_POST["Surname"];
+$address=$_POST["Address"];
+$tele=$_POST["Phone"];
+$email=$_POST["Email"];
+$memb=$_POST["Membership"];
+
+$query = "SELECT * FROM Customer";
+$result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+
+while($row = mysqli_fetch_assoc($result)) {
+    $emaildb = $row['Email'];
+    
+    if($email === $emaildb) {
+       
+        echo "<script> 
+       swal({
+  title: 'This email already exists',
+  text: 'Try a different one.',
+  type: 'error',
+
+  showConfirmButton: true
+}, function(){
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+}); 
+     $('.sweet-overlay').css('background-color','#1E4072');
+     
+      </script>"; 
+      
+        exit();
+    }
+}
+
+
+$pass=generateRandomString();
+$hash = password_hash($pass, PASSWORD_DEFAULT);
+
+$sql="INSERT INTO Customer (Name,Surname,Address,Telephone,Email,Password) VALUES ('$name','$surname','$address','$tele','$email','$hash')";
+mysqli_query($conn,$sql);
+$last_id=$conn->insert_id;
+$today = date("Y-m-d");
+$date = date('Y-m-d', strtotime('+1 month', $today));
+$reg="INSERT INTO Memberships (CustomerID,ExpirationDate,Type) VALUES ($last_id,DATE_ADD(CURDATE(),INTERVAL 1 MONTH),'$memb')";
+$result=mysqli_query($conn,$reg);
+$conn->close();
+
+$subject='Account Activation';
+$message='Hello ' . $name . '
+Your Account has been activated. Your username is: ' . $email . '
+and your password is: ' . $pass . '
+Welcome to ironsky'.'
+We recommend that you change your password';
+$headers = "From: ironsky";
+mail($email,$subject,$message,$headers);
+
+echo "<script> 
+              swal({
+  title: 'Success!',
+  text: 'User registered successfully.',
+  type: 'success',
+
+  showConfirmButton: true
+}, function(){
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+}); 
+     $('.sweet-overlay').css('background-color','#1E4072');
+      </script>";
+
+ }
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+?>
 
 </body>
 </html>

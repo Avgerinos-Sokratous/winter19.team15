@@ -1,3 +1,4 @@
+
 <?php
 include 'connectDB.php';
 
@@ -26,15 +27,15 @@ include 'connectDB.php';
     echo json_encode($data);
    */
 
-    echo "<table>";
-    
+   
+    echo "<table >";
     while ($row=mysqli_fetch_assoc($result))
-    {
+    { 
 	//echo $row["Date"]."<br>";
 	//echo $row["Title"]."<br>";
-	//echo $row["Description"]."<br><br>";
-    	
-	echo  "<tr>"."<strong>".$row["Date"]."</strong>"."<em>Subject: ".$row["Title"]."</em>"."Message: ".$row["Description"]."<br><br>"."</tr>";
+	//echo $row["Description"]."<br><br>";    	
+	$Mydate = date('F d, Y ',strtotime($row["Date"]));
+	echo "<tr>"."<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."</td>"."<br><br>"."</tr>";
 	
     }
 

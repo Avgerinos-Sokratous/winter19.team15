@@ -30,23 +30,41 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/support.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
     <!--===============================================================================================-->
-
-
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Latest compiled JavaScript -->
+    <script>
+        $(function () {
+            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.php");
+        });
+     </script>
+     <title>Ironsky Fitness</title>
+    <link rel="shortcut icon" href="images/ironsky2.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<body style="background-color:#1E4072;">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <!-- START OF NAVIGATION BAR -->
 
     <div id="includedContent"></div>
     <!-- END OF NAVIGATION BAR -->
-    <div class="form-gap" style="background-color:#1E4072;">
+    <div class="form-gap" >
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
 
-    <div class="container-contact100" style="background-color:#1E4072;">
+    <div class="container" >
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form" method="POST" action= "php/support-PHP">
+            <form class="contact100-form validate-form" method="POST" >
                 <span class="contact100-form-title">
                     Send Us A Message
                 </span>
@@ -77,17 +95,12 @@
                 </div>
 
                 <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn sub" type="submit">
+                    <button class="contact100-form-btn sub" type="submit" name="submit">
                         Send Message
                     </button>
 
                 </div>
-                <div class="container-contact100-form-btn">
-                    <a href="main.php" class="contact100-form-btn ret">
-                        Return
-                    </a>
 
-                </div>
             </form>
 
             <div class="contact100-more flex-col-c-m" style="background-image: url('images/barbells.PNG');">
@@ -146,7 +159,7 @@
                     </div>
 
                 </div>
-		</br>
+		
 		<div>
 			<a class="txt3" href="http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/privacyPolicy.php"> Privacy Policy</a>
 		</div>
@@ -190,7 +203,72 @@
             gtag('config', 'UA-23581568-13');
         </script>
 
+         <?php
+        if(array_key_exists('submit', $_POST)) { 
+            include 'php/connectDB.php';
 
+$emailCustomer=$_POST["emailCustomer"];
+$emailTrainer=$_POST["emailTrainer"];
+$subject=$_POST["subject"];
+$message=$_POST["message"];
+
+if(($emailCustomer=="")||($emailTrainer=="")||($subject=="")||($message==""))
+{
+     header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/support.php");
+        return false;
+}
+else
+{
+    $query = "SELECT * FROM Customer WHERE Email='$emailCustomer'";
+    $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+
+    if (!$result) 
+    {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    } 
+    else
+    {
+        $query2 = "SELECT * FROM Trainer WHERE Email='$emailTrainer'";
+        $result2 = mysqli_query($conn, $query2)  or die("Could not connect database " .mysqli_error($conn));
+
+        if (!$result2)
+        {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+        }
+        $row = mysqli_fetch_assoc($result);
+        //$row2 =  mysqli_fetch_assoc($result2);
+        $name= $row['Name'];
+        $surname = $row['Surname'];
+        
+        //printf($name);
+          
+        $headers = 'From: ' . $name . '< ' . $emailCustomer . ' >' . "\r\n" ;
+        
+         
+        mail($emailTrainer,$subject,$message,$headers);
+       
+        echo "<script> 
+       swal({
+  title: 'Success!',
+  text: 'Your email was sent successfully.',
+  type: 'success',
+
+  showConfirmButton: true
+}, function(){
+      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/support.php';
+}); 
+     $('.sweet-overlay').css('background-color','#1E4072');
+     
+      </script>";
+    }
+    
+}
+
+$conn->close();
+} 
+        ?>
 
 </body>
 </html>

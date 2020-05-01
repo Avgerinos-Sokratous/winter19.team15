@@ -74,7 +74,7 @@ if (password_verify($password, $row['Password'])) {
 
                               showConfirmButton: true
                               }, function(){
-                                    window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/main.php';
+                                    window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php';
                               });
                           $('.sweet-overlay').css('background-color','#1E4072');
 
@@ -90,7 +90,7 @@ if (password_verify($password, $row['Password'])) {
             if (mysqli_num_rows($results) == 1) {
                   header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/privacyPolicy.php");
             } else {
-                  header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/main.php");
+                  header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php");
             }
       }
       return true;

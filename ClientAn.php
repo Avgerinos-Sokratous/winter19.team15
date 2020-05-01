@@ -31,10 +31,14 @@
         });
     </script>
     <style type="text/css">
-	h4.logo {margin-bottom:0; }
-	.container-contact100{  align-content: start;}
-	.wrap-contact100{width: 70%; align-items: left;  padding: 15px 5px 0px 15px; font-size: 20px; flex-direction: column;}
-    </style>
+	h4.logo { margin-bottom:0; }
+	.container-contact100 {  align-content: start; padding: 30px;  }
+	.wrap-contact100 { width: 70%; align-items: left;  padding: 15px 0px 0px 0px; font-size: 20px; flex-direction: column; border-style: solid;
+  	border-color: Gainsboro;  background-color: white; }
+	table { max-width: 100%; padding: 0px 15px 0px 15px;   border-collapse: separate;
+  	 background-color: WhiteSmoke; display:flex;     }
+	tr{border: 2px solid darkCyan; border-spacing: 0 50px;}
+	</style>
 </head>
 
 <body style="background-color:#1E4072;">
@@ -52,10 +56,10 @@
  
 
     <div class="container-contact100" style="background-color:#1E4072;">
-        <div class="wrap-contact100"  >
+        <div class="wrap-contact100" >
 	
-	<span class="contact100-form-title"> Announcements </span>			
-	<?php include("php/ClientAn-PHP.php"); ?>
+	<span class="contact100-form-title" style="color:teal"> Announcements </span>			
+	<div class="RoundUp"> <?php include("php/ClientAn-PHP.php"); ?> </div>
 
 	</div>
               
