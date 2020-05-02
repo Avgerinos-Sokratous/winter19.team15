@@ -7,17 +7,7 @@
 
     include 'initSeshTrainer.php';
    
-
-$servername="localhost";
-$username = "ironsky";
-$password = "pfVGdTzSOoLh85yp";
-$dbname = "ironsky";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include './php/connectDB.php';
 $memberships=array();
 $query = "SELECT * FROM Memberships inner join Customer WHERE Customer.Customer_ID=CustomerID AND ExpirationDate<=CURRENT_TIMESTAMP";
 $result = mysqli_query($conn, $query)or die("Could not connect database " .mysqli_error($conn));

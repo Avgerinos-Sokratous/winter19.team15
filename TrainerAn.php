@@ -32,9 +32,9 @@
     </script>
 
     <style type="text/css">
-	h4.logo {margin-bottom:0}
-	.container-contact100{  align-content: start;}
-	.wrap-contact100{align-items: center;flex-direction: column;}
+	h4.logo {margin-bottom:0 }
+	.container-contact100{  align-content: start; padding-top: 5%; }
+	.wrap-contact100{  width: 70%; align-items: center;flex-direction: column; border-style: solid; border-color: Gainsboro;   }
 	.contact100-form{ width: 95%;}
     </style>
 </head>
@@ -54,8 +54,9 @@
 
     <div class="container-contact100" style="background-color:#1E4072;">
         <div class="wrap-contact100"  >
-            <form class="contact100-form validate-form" method="POST" action= "php/Announcements.php">
-                
+	        
+		<form class="contact100-form validate-form" method="POST" action= "php/Announcements.php">
+               
 		<span class="contact100-form-title">
                     Announcements
                 </span>
@@ -81,7 +82,10 @@
 
                 </div> 
             </form>
+ 		
         </div>
+
+  
 
         <div id="dropDownSelect1"></div>
 

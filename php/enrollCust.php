@@ -11,6 +11,8 @@
 
     session_start();
 	$mail=$_SESSION["email"];
+	
+	
 
     //get user's id
     $sql="SELECT Customer_ID FROM Customer WHERE Email='".$mail."'";
@@ -19,19 +21,24 @@
     $r = mysqli_fetch_assoc($result);
     $custID=$r['Customer_ID'];
 
+    
+
     //get user's membership
-    $sql="SELECT Type FROM Memberships WHERE ID=".$custID;
+    $sql="SELECT Type FROM Memberships WHERE CustomerID=".$custID;
     mysqli_query($conn,$sql);
     $result = $conn->query($sql);
     $r = mysqli_fetch_assoc($result);
     $membership=$r['Type'];
     
+    
 
     $three=true;   //user is allowed only 3 times a week
     //check if he is allowed only 3 times a week
-    if((strpos($membership,"Unlimited") == 0)|| (strpos($membership,"Open Gym") == 0)){
+    if((strpos($membership,"Unlimited") === 0)|| (strpos($membership,"Open Gym") === 0)){
         $three=false;
     }
+    
+    
     
     //if he is allowd only 3 times, check if he has enrolled three times for the week he wishes to enroll
     if($three){
@@ -58,7 +65,8 @@
     }
 
     //check if he has open gym membership
-    if(strpos($membership,"Open Gym") == 0){
+    if(strpos($membership,"Open Gym") === 0){
+        
         echo(-4);
         exit();
     }
@@ -101,11 +109,7 @@
     //$sql="INSERT INTO Enrolled VALUES ('".$mail."',".$cid.",CURDATE()+".$diff.")";
     if (mysqli_query($conn, $sql)){
     $sql="UPDATE ClassV1 SET Number_of_available=".$numplaces." WHERE ClassID=".$cid;
-        if (!mysqli_query($conn, $sql)){
-            echo(-3);
-            $conn->close();
-            exit();
-        }
+        mysqli_query($conn, $sql);
         echo(1);
     }else{
         echo(0);

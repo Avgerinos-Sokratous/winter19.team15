@@ -131,8 +131,8 @@ if (password_verify($password, $row['Password'])) {
       } else {
             echo "<script>
                         swal({
-                              title: 'Password is Invalid',
-                              text: 'The Email or Password is invalid.',
+                              title: 'Email or Password is Invalid',
+                              text: '',
                               type: 'error',
 
                               showConfirmButton: true

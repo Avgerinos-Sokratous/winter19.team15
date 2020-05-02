@@ -31,7 +31,7 @@
         });
     </script>
     <style type="text/css">
-	.container-contact100 {  align-content: start; }
+	.container-contact100 {  align-content: start; padding-top: 5%;}
 	.wrap-contact100 { width: 70%; align-items: left;   font-size: 20px;  border-style: solid;
   	border-color: Gainsboro;  background-color: white; }
 	.contact100-form-title{ font-size: 35px; padding: 20px 0px 70px 0px; line-height: normal; color: teal; }

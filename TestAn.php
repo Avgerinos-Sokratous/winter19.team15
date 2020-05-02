@@ -22,26 +22,30 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/support.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/TestAn-style.css">
+
     <!--===============================================================================================-->
     
     <script>
         $(function () 
         {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.html");
+            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbar.html");
         });
     </script>
+
     <style type="text/css">
-	.container-contact100 {  align-content: start; 	padding-top: 5%;}
-	.wrap-contact100 { width: 70%; align-items: left;   font-size: 20px;  border-style: solid;
-  	border-color: Gainsboro;  background-color: white; }
-	.contact100-form-title{ font-size: 35px; padding: 20px 0px 70px 0px; line-height: normal; color: teal; }
+	h4.logo {margin-bottom:0 }
+	container-contact100{   padding: 20px 0px 70px 0px;  padding-top: 5%; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0px;}
+	.wrap-contact100{ margin: 0px 0px 0px 50px; align-items: center; justify-content: center; height: 100%;  font-size: 20px;  }
+	.contact100-form-title{ font-size: 35px; padding: 20px 0px 70px 0px; color: teal; }
 	.welcome{ width:100%; text-align:left; margin-bottom: -50px; color: DarkGoldenRod; font-size: 22px;}
-	table, tr{  max-width: 100%; border-spacing: 0px 50px; border-collapse: separate;}
+	table, tr{  max-width: 100%; border-spacing: 2px 50px; border-collapse: separate;}
 	td{border: 2px solid teal;  padding: 0px 10px 20px 5px; background-color: WhiteSmoke;}
-	</style>
+	
+    </style>
 </head>
 
-<body style="background-color:#1E4072;">
+<body>
     
     <!-- START OF NAVIGATION BAR -->
 
@@ -53,25 +57,53 @@
     <div class="form-gap" style="background-color:#1E4072;">
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
- 
 
     <div class="container-contact100" style="background-color:#1E4072;">
-        <div class="wrap-contact100" >
+        <div class="wrap-contact100"  >
+	        
+		<form class="contact100-form validate-form" method="POST" action= "php/TestAn-PHP.php">
+               
+		<span class="contact100-form-title">
+                    Announcements
+                </span>
+                <span align-text:left; style="font-size: 26px">
+                    Write Your Announcement
+                </span>
+                  <label class="label-input100" for="subject">Subject *</label>
+                <div class="wrap-input100 validate-input" data-validate="Subject is required">
+                    <input id="subject" class="input100" name="subject" placeholder="Write title of Subject">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <label class="label-input100" for="message">Message *</label>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn sub" type="submit" name="submit">
+                        Post Announcement
+                    </button>
+
+                </div> 
+            </form>
+ 		
+        </div>
+
+<div class="container-contact100" style="align-items: left; background-color:#1E4072;">
+        <div class="wrap-contact100"  >
 	
 	<span class="contact100-form-title"> Announcements </span>	
 	
-	<span class="welcome"> Keep the spirit, Stay Updated! </span>
+	<span class="welcome" > Keep the spirit, Stay Updated! </span>
 
 	<div class="RoundUp">  <?php include("php/ClientAn-PHP.php"); ?> </div>
 
 	</div>
               
-    </div>
-
-
-    	              
-	
-
+    
+</div>
         <div id="dropDownSelect1"></div>
 
         <!--===============================================================================================-->
