@@ -36,11 +36,11 @@ include 'connectDB.php';
 	//echo $row["Title"]."<br>";
 	//echo $row["Description"]."<br><br>"; 
   	
-date_default_timezone_set('Europe/Athens');
+	//date_default_timezone_set('Europe/Athens');
  
-echo date('Y-m-d H:i:s O');
+	//echo date('Y-m-d H:i:s O');
 	//$Mydate = date_create_from_format("j-M-Y",$row["Date"]);
-	//$Mydate = date('F d, Y ',strtotime($row["Date"]));
+	$Mydate = date('F d, Y ',strtotime($row["Date"]));
 	echo "<tr>"."<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."<br>"."</td>"."</tr>";
 	
     }
