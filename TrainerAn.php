@@ -33,9 +33,14 @@
 
     <style type="text/css">
 	h4.logo {margin-bottom:0 }
-	.container-contact100{  align-content: start; padding-top: 5%; }
-	.wrap-contact100{  width: 70%; align-items: center;flex-direction: column; border-style: solid; border-color: Gainsboro;   }
-	.contact100-form{ width: 95%;}
+	.container-contact100{  padding-top: 5%;}
+	.wrap-contact100{ width: 70%; font-size: 20px;  }
+	.contact100-form-title{ font-size: 35px; color: teal; }
+	.contact100-form{ width: 100%;}
+	.welcome{ width:100%; text-align:left;  color: DarkGoldenRod; font-size: 22px;}
+	table, tr{  max-width: 100%; border-spacing: 2px 50px; border-collapse: separate;}
+	td{border: 2px solid teal;  padding: 0px 10px 20px 5px; background-color: WhiteSmoke;}
+	.marg{ padding-top: 80px;}
     </style>
 </head>
 
@@ -55,7 +60,7 @@
     <div class="container-contact100" style="background-color:#1E4072;">
         <div class="wrap-contact100"  >
 	        
-		<form class="contact100-form validate-form" method="POST" action= "php/Announcements.php">
+		<form class="contact100-form validate-form" method="POST" action= "php/PostAnnouncements.php">
                
 		<span class="contact100-form-title">
                     Announcements
@@ -83,10 +88,15 @@
                 </div> 
             </form>
  		
-        </div>
+       
+	<div class= "marg" >
+	<span class="contact100-form-title"> Client Announcements </span>	
 
-  
-
+	<?php include("php/TrainerAn-PHP.php"); ?>
+	</div>
+              
+    </div>
+</div>
         <div id="dropDownSelect1"></div>
 
         <!--===============================================================================================-->

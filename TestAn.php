@@ -35,13 +35,14 @@
 
     <style type="text/css">
 	h4.logo {margin-bottom:0 }
-	container-contact100{   padding: 20px 0px 70px 0px;  padding-top: 5%; display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0px;}
-	.wrap-contact100{ margin: 0px 0px 0px 50px; align-items: center; justify-content: center; height: 100%;  font-size: 20px;  }
-	.contact100-form-title{ font-size: 35px; padding: 20px 0px 70px 0px; color: teal; }
-	.welcome{ width:100%; text-align:left; margin-bottom: -50px; color: DarkGoldenRod; font-size: 22px;}
+	.container-contact100{  padding-top: 5%;}
+	.wrap-contact100{ width: 70%; font-size: 20px;  }
+	.contact100-form-title{ font-size: 35px; color: teal; }
+	.contact100-form{ width: 100%;}
+	.welcome{ width:100%; text-align:left;  color: DarkGoldenRod; font-size: 22px;}
 	table, tr{  max-width: 100%; border-spacing: 2px 50px; border-collapse: separate;}
 	td{border: 2px solid teal;  padding: 0px 10px 20px 5px; background-color: WhiteSmoke;}
-	
+	.marg{ padding-top: 80px;}
     </style>
 </head>
 
@@ -61,7 +62,7 @@
     <div class="container-contact100" style="background-color:#1E4072;">
         <div class="wrap-contact100"  >
 	        
-		<form class="contact100-form validate-form" method="POST" action= "php/TestAn-PHP.php">
+		<form class="contact100-form validate-form" method="POST" action= "php/PostAnnouncements.php">
                
 		<span class="contact100-form-title">
                     Announcements
@@ -89,20 +90,16 @@
                 </div> 
             </form>
  		
-        </div>
-
-<div class="container-contact100" style="align-items: left; background-color:#1E4072;">
-        <div class="wrap-contact100"  >
+       
+	<div class= "marg" >
+	<span class="contact100-form-title"> Client Announcements </span>	
 	
-	<span class="contact100-form-title"> Announcements </span>	
 	
-	<span class="welcome" > Keep the spirit, Stay Updated! </span>
 
-	<div class="RoundUp">  <?php include("php/ClientAn-PHP.php"); ?> </div>
-
+	<?php include("php/TrainerAn-PHP.php"); ?>
 	</div>
               
-    
+    </div>
 </div>
         <div id="dropDownSelect1"></div>
 

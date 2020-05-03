@@ -27,6 +27,7 @@
 </head>
   
   <body style="background-color:#1E4072;">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <!-- START OF NAVIGATION BAR -->
   
       <div id="includedContent"></div>
@@ -47,9 +48,78 @@
                 </div>
                 <div class="card-body">
          <canvas id="myChart"></canvas>   
-          <script src="js/mdb.js"></script>
-                     <script src="js/chart.js"></script>
-  
+          <!--<script src="js/mdb.js"></script>
+                     <script src="js/chart.js"></script>-->
+ <script>                    
+ var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // Only run if the request is complete
+        if (xhr.readyState !== 4) return;
+        // Process our return data
+        if (xhr.status >= 200 && xhr.status < 300) {
+            //success code here
+
+            //console.log(xhr.responseText);
+
+		
+        } else {
+            console.log('error', xhr);
+        }
+    };
+    xhr.open('POST', 'statsCollection.php');
+    xhr.setRequestHeader("Content-Type", "application/json");
+    data = {};
+    data.address = advl;
+    data.region = regval;
+    data.city = cityval;
+    xhr.send(JSON.stringify(data)); //calls the php file
+    
+  }
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var hours = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // Only run if the request is complete
+        if (xhr.readyState !== 4) return;
+        // Process our return data
+        if (xhr.status >= 200 && xhr.status < 300) {
+            //success code here
+
+            //console.log(xhr.responseText);
+
+		
+        } else {
+            console.log('error', xhr);
+        }
+    };
+    xhr.open('POST', 'location.php');
+    xhr.setRequestHeader("Content-Type", "application/json");
+    data = {};
+    data.address = advl;
+    data.region = regval;
+    data.city = cityval;
+    xhr.send(JSON.stringify(data)); //calls the php file
+    
+  }
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['7:30', '8:30', '9:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30', '16:30', '17:30', '18:30', '19:30', '20:30', '21:30'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [ hours[0], hours[1], hours[2], hours[3], hours[4], hours[5], hours[6], hours[7], hours[8], hours[9], hours[10], hours[11], hours[12], hours[13], hours[14], hours[15] ]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+           </script>
                 </div>
   </div>
   </div>
