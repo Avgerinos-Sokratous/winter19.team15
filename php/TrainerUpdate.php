@@ -105,12 +105,12 @@
            <div class="row">
             <div class="col-lg-12 mx-auto">  
         <div class="card">
-	    <div class="up">    
+	       
 		<span class="contact100-form-title ga">
                     Announcements
                 </span> 
 		
-
+		<div class="up"> 
 		<form class="contact100-form validate-form" method="POST" action= "UpdatePost.php?Id=<?=$_GET['id'] ?>">
                
                   <label class="label-input100" for="subject">Subject *</label>
