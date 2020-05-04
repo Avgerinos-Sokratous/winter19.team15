@@ -56,7 +56,11 @@
  
 
     <div class="container-contact100" style="background-color:#1E4072;">
-        <div class="wrap-contact100" >
+         <div class="row">
+        
+            <div class="col-lg-12 mx-auto"> 
+        
+        <div class="card" >
 	
 	<span class="contact100-form-title"> Announcements </span>	
 	
@@ -65,6 +69,9 @@
 	<div class="RoundUp">  <?php include("php/ClientAn-PHP.php"); ?> </div>
 
 	</div>
+    </div>
+    </div>
+    
               
     </div>
 
