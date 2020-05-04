@@ -2,9 +2,8 @@
 <?php
 include 'connectDB.php';
 
-    //echo "Hello World!";
-   
-    $query = "SELECT * FROM Announcements ORDER BY Id DESC LIMIT 7"; 
+     
+    $query = "SELECT * FROM Announcements ORDER BY Id DESC"; 
     $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
     
     if (!$result) 
@@ -16,33 +15,17 @@ include 'connectDB.php';
     else
     {
     
-    //echo "Else Test";
-
-    /*    
-    while($row = mysqli_fetch_assoc($result))
-    { 
-        $data[] = $row;
-    }
-    
-    echo json_encode($data);
-   */
-
-   
     echo "<table >";
    
     while ($row=mysqli_fetch_assoc($result))
     { 
-	//echo $row["Date"]."<br>";
-	//echo $row["Title"]."<br>";
-	//echo $row["Description"]."<br><br>"; 
-  	
-	//date_default_timezone_set('Europe/Athens');
- 
-	//echo date('Y-m-d H:i:s O');
-	//$Mydate = date_create_from_format("j-M-Y",$row["Date"]);
-	$Mydate = date('F d, Y ',strtotime($row["Date"]));
-	echo "<tr>"."<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."<br>"."</td>"."</tr>";
 	
+	$Mydate = date('F d, Y ',strtotime($row["Date"]));
+	echo "<tr>";
+	echo "<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."<br>"."</td>";
+	echo "<td class='fill'><a href= http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/deletePost.php?id=".$row['Id'].">DELETE </a></td>";
+	echo "<td class='fill'><a href= http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/TrainerUpdate.php?id=".$row['Id'].">EDIT </a></td>";
+	echo "</tr>";
     }
     
     echo "</table>";

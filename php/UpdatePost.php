@@ -14,36 +14,27 @@
 include 'connectDB.php';
 
 
-  //$id= $_POST["Id"];
-  $date= date('Y-m-d');
+  //$date= date('Y-m-d');
   $subject= $_POST["subject"];
   $message= $_POST["message"];
 
 
-
- if(($date=="")||($subject=="")||($message==""))
- {
-     header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/TrainerAn.php");
-     return false;
- }
-
- else
- {	
-    $query = "INSERT INTO Announcements (Date, Title, Description) VALUES ('$date','$subject','$message')";
-
-    $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+    $query = "UPDATE Announcements SET Title='$subject', Description='$message' WHERE Id=$_GET[Id]";
+    $result = mysqli_query($conn, $query)  or die("Error at Database");
 
     if (!$result) 
     {
         printf("Error");
         exit();
     } 
-       
-
+      
+     
+     else
+     {	
      echo "<script> 
      swal({
      title: 'Success!',
-     text: 'Your Post was uploaded successfully.',
+     text: 'Your Post was Updated successfully.',
      type: 'success',
 
      showConfirmButton: true
@@ -53,10 +44,8 @@ include 'connectDB.php';
      $('.sweet-overlay').css('background-color','#1E4072');
      
       </script>";
+      
       }
-
-    
- 
 
 $conn->close();
 
