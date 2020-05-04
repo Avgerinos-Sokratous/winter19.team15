@@ -89,9 +89,10 @@
             <div class="col-lg-12 mx-auto">  
 	            <div class="card"  >
                
-	               <div class="up">
+	               
 		              <span class="contact100-form-title ga">Announcements</span> 
-		              <span class="contact100-form-title"> Write your Announcement </span>
+		              <div class="up">
+				<span class="contact100-form-title"> Write your Announcement </span>
 		
 		              <form class="contact100-form validate-form" method="POST" action= "php/PostAnnouncements.php">
             
