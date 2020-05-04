@@ -133,9 +133,8 @@
             </form>
  	     </div>
 
-       <div class="container-contact100-form-btn">
-         <button  class="contact100-form-btn drop" type="submit" name="submit">READ AND MODIFY THE POSTED ANNOUNCEMENTS</button>
-	 </div> 
+                <button  class="contact100-form-btn drop" type="submit" name="submit">READ AND MODIFY THE POSTED ANNOUNCEMENTS</button>
+	
 
 	<div class= "marg" >
 	<span class="contact100-form-title"> All Posts </span>	
