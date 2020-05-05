@@ -25,7 +25,7 @@ $verifypass=$_POST["Verify"];
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -42,7 +42,7 @@ $verifypass=$_POST["Verify"];
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -83,7 +83,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -126,7 +126,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -146,7 +146,7 @@ Your password has changed.';
     
       showConfirmButton: true
     }, function(){
-          window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+          window.location.href = 'https://www.ironsky-app.com/changepass.php';
     }); 
          $('.sweet-overlay').css('background-color','#1E4072');
           </script>";

@@ -15,7 +15,7 @@ include 'connectDB.php';
      else
 	{
     
- 	header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/TrainerAn.php");
+ 	header("Location:https://www.ironsky-app.com/TrainerAn.php");
 	exit();
 	
 	}

@@ -11,7 +11,7 @@
     <!-- Latest compiled JavaScript -->
     <script>
     $(function () {
-    $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbar.html");
+    $("#includedContent").load("https://www.ironsky-app.com/navbar.html");
     });
     </script>
     <title>Ironsky Fitness</title>
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPasswordOTP">Security Password</label>
-                                    <input type="password" class="form-control" id="inputPasswordNew" name="OTP" required="">
+                                    <input type="text" class="form-control" id="OTP" name="OTP" required="">
                                     
                                 </div>
                                 <div class="form-group">
@@ -104,7 +104,7 @@ if (array_key_exists('submit', $_POST))
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -122,7 +122,7 @@ if (array_key_exists('submit', $_POST))
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -152,9 +152,9 @@ if (array_key_exists('submit', $_POST))
                             $message = 'Hello, ' . $name . '.
 
 Your password has changed.';
-                            $headers = "From: ironsky";
+                            $headers = "Ironsky App <info@ironsky-app.com>";
 
-                            mail($email, $subject, $message, $headers);
+                            mail($email, $subject, $message, "From: ".$headers);
 
                             $sql = "DELETE FROM OTP_Passwords WHERE Email='$email'";
                             mysqli_query($conn, $sql);
@@ -167,7 +167,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -201,9 +201,9 @@ Your password has changed.';
                                 $message = 'Hello, ' . $name . '.
                 
 Your password has changed.';
-                                $headers = "From: ironsky";
+                                $headers = "Ironsky App <info@ironsky-app.com>";
 
-                                mail($email, $subject, $message, $headers);
+                                mail($email, $subject, $message,"From:".$headers);
 
                                 $sql = "DELETE FROM OTP_Passwords WHERE Email='$email'";
                                 mysqli_query($conn, $sql);
@@ -216,7 +216,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -239,7 +239,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                            window.location.href = 'https://www.ironsky-app.com/changepass.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -262,7 +262,7 @@ Your password has changed.';
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -279,7 +279,7 @@ Your password has changed.';
                 
                   showConfirmButton: true
                 }, function(){
-                      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                      window.location.href = 'https://www.ironsky-app.com/changepass.php';
                 }); 
                      $('.sweet-overlay').css('background-color','#1E4072');
                       </script>";
@@ -324,7 +324,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -368,7 +368,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                            window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";
@@ -385,7 +385,7 @@ Your password has changed.';
     
       showConfirmButton: true
     }, function(){
-          window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+          window.location.href = 'https://www.ironsky-app.com/changepass.php';
     }); 
          $('.sweet-overlay').css('background-color','#1E4072');
           </script>";
@@ -403,7 +403,7 @@ Your password has changed.';
                       
                         showConfirmButton: true
                       }, function(){
-                            window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+                            window.location.href = 'https://www.ironsky-app.com/changepass.php';
                       }); 
                            $('.sweet-overlay').css('background-color','#1E4072');
                             </script>";

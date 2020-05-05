@@ -23,8 +23,8 @@ include 'connectDB.php';
 	$Mydate = date('F d, Y ',strtotime($row["Date"]));
 	echo "<tr>";
 	echo "<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."<br>"."</td>";
-	echo "<td class='fill'><a href= http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/deletePost.php?id=".$row['Id'].">DELETE </a></td>";
-	echo "<td class='fill'><a href= http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/TrainerUpdate.php?id=".$row['Id'].">EDIT </a></td>";
+	echo "<td class='fill'><a href= https://www.ironsky-app.com/php/deletePost.php?id=".$row['Id'].">DELETE </a></td>";
+	echo "<td class='fill'><a href= https://www.ironsky-app.com/TrainerUpdate.php?id=".$row['Id'].">EDIT </a></td>";
 	echo "</tr>";
     }
     

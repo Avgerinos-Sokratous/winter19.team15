@@ -23,7 +23,7 @@ if(($email=="")){
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/reset.php';
+      window.location.href = 'https://www.ironsky-app.com/reset.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      
@@ -43,7 +43,7 @@ if(($email=="")){
 
     $subject='Password Deactivation';
     $message='Helllo, '. $name. '.
-    To change your password press the following link: http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php';
+    To change your password press the following link: https://www.ironsky-app.com/changepass.php';
     $headers = "From: ironsky";
 
 
@@ -57,7 +57,7 @@ if(($email=="")){
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";

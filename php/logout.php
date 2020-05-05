@@ -3,5 +3,5 @@
     $_SESSION = [];
     session_destroy();
     
-    header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php");
+    header("Location:https://www.ironsky-app.com/sign-in.php");
 ?>

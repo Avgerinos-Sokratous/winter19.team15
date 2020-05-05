@@ -26,7 +26,7 @@ include 'connectDB.php';
 
  if(($date=="")||($subject=="")||($message==""))
  {
-     header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/TrainerAn.php");
+     header("Location:https://www.ironsky-app.com/TrainerAn.php");
      return false;
  }
 
@@ -59,7 +59,7 @@ include 'connectDB.php';
 
      showConfirmButton: true
       }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/TrainerAn.php';
+      window.location.href = 'https://www.ironsky-app.com/TrainerAn.php';
       }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      

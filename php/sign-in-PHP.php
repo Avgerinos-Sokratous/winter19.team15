@@ -27,7 +27,7 @@ if (($email == "") || ($password == "")) {
 
                         showConfirmButton: true
                         }, function(){
-                              window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                              window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                         });
                    $('.sweet-overlay').css('background-color','#1E4072');
 
@@ -74,7 +74,7 @@ if (password_verify($password, $row['Password'])) {
 
                               showConfirmButton: true
                               }, function(){
-                                    window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php';
+                                    window.location.href = 'https://www.ironsky-app.com/pastPrograms.php';
                               });
                           $('.sweet-overlay').css('background-color','#1E4072');
 
@@ -88,9 +88,9 @@ if (password_verify($password, $row['Password'])) {
             $query = "SELECT * FROM Login_Log WHERE Customer_ID=$id";
             $results = mysqli_query($conn, $query);
             if (mysqli_num_rows($results) == 1) {
-                  header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/privacyPolicy.php");
+                  header("Location:https://www.ironsky-app.com/privacyPolicy.php");
             } else {
-                  header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php");
+                  header("Location:https://www.ironsky-app.com/pastPrograms.php");
             }
       }
       return true;
@@ -109,7 +109,7 @@ if (password_verify($password, $row['Password'])) {
             $_SESSION['authTrainer'] = TRUE;
             session_write_close();
 
-            header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php");
+            header("Location:https://www.ironsky-app.com/mainTrainer.php");
             return true;
       } else {
             echo "<script>
@@ -120,7 +120,7 @@ if (password_verify($password, $row['Password'])) {
 
                               showConfirmButton: true
                               }, function(){
-                                    window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+                                    window.location.href = 'https://www.ironsky-app.com/sign-in.php';
                               });
                         $('.sweet-overlay').css('background-color','#1E4072');
 

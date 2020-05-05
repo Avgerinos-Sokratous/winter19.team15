@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^ironsky\-app\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ironsky\-app\.com$
+RewriteRule ^/?$ "https\:\/\/www\.ironsky\-app\.com\/sign\-in\.php" [R=301,L]
+

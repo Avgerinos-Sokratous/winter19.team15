@@ -16,7 +16,7 @@
     <!-- Latest compiled JavaScript -->
     <script>
     $(function () {
-    $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.php");
+    $("#includedContent").load("https://www.ironsky-app.com/navbarclient.php");
     });
     </script>
     <title>Ironsky Fitness</title>
@@ -116,8 +116,7 @@
 </body>
 </html>
 <script>
-//All Things Gym Rep Max Calculator: http://www.allthingsgym.com/rep-max-calculator/
-//To do: fancy charts?
+
 
 $('#weight,#reps').on("keyup change", function() { //constantly fire when a weight is entered OR reps are changed, ain't nobody got time for submit buttons
 

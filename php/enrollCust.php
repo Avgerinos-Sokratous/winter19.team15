@@ -55,7 +55,7 @@
         $result = $conn->query($sql);
         while($r = mysqli_fetch_assoc($result)) {
             if($r['WEEK(Date)']==$week){
-                if($r['COUNT(Id)']==3){
+                if($r['COUNT(Id)']>=3){
                     echo(-3);
                     exit();
                 }

@@ -1,3 +1,27 @@
+<?php 
+ 
+   include './php/connectDB.php';
+   //$id = $_GET['Id'];
+   $query = "SELECT * FROM Announcements WHERE Id='$_GET[id]'";
+
+   $result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
+    
+    if (!$result) 
+    {
+        printf("Error");
+        exit();
+    } 
+
+    else
+    {
+    	while($row=mysqli_fetch_assoc($result))
+    	{
+       	 $subject= $row["Title"];
+ 	 $message= $row["Description"];
+    	}
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,29 +43,51 @@
     <title>Ironsky Fitness</title>
     <link rel="shortcut icon" href="images/ironsky2.png" type="image/png">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/support.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/support.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <!--===============================================================================================-->
-    
-    <script>
-        $(function () 
-        {
-            $("#includedContent").load("https://www.ironsky-app.com/navbarclient.html");
-        });
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+	$(document).ready(function(){
+ 	 $("button.drop").click(function(){
+    	$("div.up").slideToggle();  	
+	});
+	});
     </script>
+  
+   <script>
+	$(document).ready(function(){
+ 	 $("button.drop").click(function(){
+    	$("div.marg").slideToggle();  	
+	});
+	});
+    </script>
+
+    <script>
+            $(function () {
+    $("#includedContent").load("https://www.ironsky-app.com/navTrainer.php");
+    });
+    </script>
+
     <style type="text/css">
-	.container-contact100 {  align-content: start; 	padding-top: 5%;}
-	.wrap-contact100 { width: 70%; align-items: left;   font-size: 20px;  border-style: solid;
-  	border-color: Gainsboro;  background-color: white; }
-	.contact100-form-title{ font-size: 35px; padding: 20px 0px 70px 0px; line-height: normal; color: teal; }
-	.welcome{ width:100%; text-align:left; margin-bottom: -50px; color: DarkGoldenRod; font-size: 22px;}
-	table, tr{  max-width: 100%; border-spacing: 0px 50px; border-collapse: separate;}
+	h4.logo {margin-bottom:0 }
+	.container-contact100{  padding-top: 5%; }
+	.wrap-contact100{ width: 70%; font-size: 20px;  }
+	.contact100-form-title{ font-size: 30px; color: teal; }
+	.contact100-form{ width: 100%;}
+	.welcome{ width:100%; text-align:left;  color: DarkGoldenRod; font-size: 22px;}
+	table, tr{  max-width: 100%; border-spacing: 2px 50px; border-collapse: separate;}
 	td{border: 2px solid teal;  padding: 0px 10px 20px 5px; background-color: WhiteSmoke;}
-	</style>
+	td.fill  {background-color: Chocolate; text-align:center;   width: 5%;}
+	td a{color: white;}
+	.drop{background: DarkSlateGray;  }
+	.marg{ padding-top: 80px; display: none;}
+	.ga{font-size: 40px; padding-top: 20px;}
+    </style>
 </head>
 
-<body style="background-color:#1E4072;">
+<body>
     
     <!-- START OF NAVIGATION BAR -->
 
@@ -50,78 +96,55 @@
     <!-- END OF NAVIGATION BAR -->
 
     
-    <div class="form-gap" style="background-color:#1E4072;">
+    <div class="form-gap" >
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
- 
 
-    <div class="container-contact100" style="background-color:#1E4072;">
-        <div class="wrap-contact100" >
-	
-	<span class="contact100-form-title"> Announcements </span>	
-	
-	<span class="welcome"> Keep the spirit, Stay Updated! </span>
+    <div class="container-contact100" style="background-color: rgba(255, 255, 255, 0)">
+           <div class="row">
+            <div class="col-lg-12 mx-auto">  
+        <div class="card">
+	       
+		<span class="contact100-form-title ga">
+                    Announcements
+                </span> 
+		
+		<div class="up"> 
+		<form class="contact100-form validate-form" method="POST" action= "./php/UpdatePost.php?Id=<?=$_GET['id'] ?>">
+               
+                  <label class="label-input100" for="subject">Subject *</label>
+                <div class="wrap-input100 validate-input" data-validate="Subject is required">
+                    <input id="subject" class="input100" name="subject" placeholder="Write title of Subject" value="<?php echo $subject ?>">
+                    <span class="focus-input100"></span>
+                </div>
 
-	<div class="RoundUp">  <?php include("php/ClientAn-PHP.php"); ?> </div>
-<?php
-         if(isset($_POST['delete'])) {
-                        $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-            
-            if(! $conn ) {
-               die('Could not connect: ' . mysql_error());
-            }
-				
-            $emp_id = $_POST['emp_id'];
-            
-            $sql = "DELETE FROM employee WHERE emp_id = $emp_id" ;
-            mysql_select_db('test_db');
-            $retval = mysql_query( $sql, $conn );
-            
-            if(! $retval ) {
-               die('Could not delete data: ' . mysql_error());
-            }
-            
-            echo "Deleted data successfully\n";
-            
-            mysql_close($conn);
-         }else {
-            ?>
-               <form method = "post" action = "<?php $_PHP_SELF ?>">
-                  <table width = "400" border = "0" cellspacing = "1" 
-                     cellpadding = "2">
-                     
-                     <tr>
-                        <td width = "100">Employee ID</td>
-                        <td><input name = "emp_id" type = "text" 
-                           id = "emp_id"></td>
-                     </tr>
-                     
-                     <tr>
-                        <td width = "100"> </td>
-                        <td> </td>
-                     </tr>
-                     
-                     <tr>
-                        <td width = "100"> </td>
-                        <td>
-                           <input name = "delete" type = "submit" 
-                              id = "delete" value = "Delete">
-                        </td>
-                     </tr>
-                     
-                  </table>
-               </form>
-            <?php
-         }
-      ?>
+                <label class="label-input100" for="message">Message *</label>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea id="message" class="input100" name="message" placeholder="Write us a message"><?php echo $message?> </textarea>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn sub" type="submit" name="submit">
+                        Update Announcement
+                    </button>
+
+                </div> 
+            </form>
+ 	     </div>
+
+                <button  class="contact100-form-btn drop" type="submit" name="submit">READ AND MODIFY THE POSTED ANNOUNCEMENTS</button>
+	
+
+	<div class= "marg" >
+	<span class="contact100-form-title"> All Posts </span>	
+
+	<?php include("./php/TrainerAn-PHP.php"); ?>
 	</div>
               
     </div>
-
-
-    	              
-	
-
+    </>
+    </>
+</div>
         <div id="dropDownSelect1"></div>
 
         <!--===============================================================================================-->

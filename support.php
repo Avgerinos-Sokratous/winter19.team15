@@ -40,7 +40,7 @@
     <!-- Latest compiled JavaScript -->
     <script>
         $(function () {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.php");
+            $("#includedContent").load("https://www.ironsky-app.com/navbarclient.php");
         });
      </script>
      <title>Ironsky Fitness</title>
@@ -62,7 +62,7 @@
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
 
-    <div class="container" >
+    <div class="container-contact100" style="background-color: rgba(255, 255, 255, 0)">
         <div class="wrap-contact100">
             <form class="contact100-form validate-form" method="POST" >
                 <span class="contact100-form-title">
@@ -148,11 +148,12 @@
                 </div>
 		
 		<div>
-			<a class="txt3" href="http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/privacyPolicy.php"> Privacy Policy</a>
+			<a class="txt3" href="https://www.ironsky-app.com/privacyPolicy.php"> Privacy Policy</a>
 		</div>
             </div>
 
 
+        </div>
         </div>
 
 
@@ -195,13 +196,13 @@
             include 'php/connectDB.php';
 
 $emailCustomer=$_SESSION['email'];
-$emailTrainer='sloizi02@cs.ucy.ac.cy';
+$emailTrainer='info@ironsky-app.com';
 $subject=$_POST["subject"];
 $message=$_POST["message"];
 
 if(($emailCustomer=="")||($emailTrainer=="")||($subject=="")||($message==""))
 {
-     header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/support.php");
+     header("Location:https://www.ironsky-app.com/support.php");
         return false;
 }
 else
@@ -244,7 +245,7 @@ else
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/support.php';
+      window.location.href = 'https://www.ironsky-app.com/support.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      

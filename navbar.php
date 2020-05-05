@@ -72,7 +72,7 @@
                     <a class="nav-link" href="clientData.php" tabindex="-1">Client Data</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/logout.php" tabindex="-1">Logout</a>
+                    <a class="nav-link" href="https://www.ironsky-app.com/php/logout.php" tabindex="-1">Logout</a>
                 </li>
             </ul>
 

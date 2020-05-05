@@ -290,12 +290,37 @@ if($paypal_ipn_status == "Completed Successfully"){
             $row = mysqli_fetch_assoc($result);
             $exp=$row['ExpirationDate'];
 
+            $today=date("Y-m-d");
             
-            //update membership
-            $up="UPDATE Memberships SET Type='Unlimited',ExpirationDate=DATE_ADD('$exp',INTERVAL ".$duration." MONTH) WHERE CustomerID=".$userID;
-            mysqli_query($conn,$up);
+            //check for on hold paid memberships
+            $sql="SELECT * FROM On_Hold_Memberships WHERE UserID=".$userID." ORDER BY PrevExp DESC";
+            $result=mysqli_query($conn,$sql); 
+            $row = mysqli_fetch_assoc($result);
+
             
-            
+            if($row['UserID']==$userID){
+                //save the payed membership in the On_Hold_Memberships
+                //we get the entry with the highest date because of order by
+                //calculate the next expiry date based on this date
+                
+
+                $calcExp=$row['CalcExp'];
+                $sql="INSERT INTO On_Hold_Memberships(UserID,MembershipType,PrevExp,CalcExp) VALUES ($userID,'$membership','$calcExp',DATE_ADD('$calcExp',INTERVAL ".$duration." MONTH))";
+                mysqli_query($conn,$sql);
+
+            }else{
+                //if he doesn't have another paid membership then check the dates, to see if his current membership is expired
+                //if it is not, add him to the table On_Hold_Memberships, else update his membership
+                if($exp>$today){
+                    $sql="INSERT INTO On_Hold_Memberships(UserID,MembershipType,PrevExp,CalcExp) VALUES ($userID,'$membership','$exp',DATE_ADD('$exp',INTERVAL ".$duration." MONTH))";
+                    mysqli_query($conn,$sql);
+                }else{
+                    //update membership
+                    $up="UPDATE Memberships SET Type='$membership',ExpirationDate=DATE_ADD('$exp',INTERVAL ".$duration." MONTH) WHERE CustomerID=".$userID;
+                    mysqli_query($conn,$up);
+                }
+            }
+
             
     }
 }

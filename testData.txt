@@ -1,0 +1,29 @@
+Client Details: 
+Name => Andreas
+Surname => Savva
+Customer_ID => 987120
+Address => Some address
+Telephone => 12345676
+Email => asavva01@cs.ucy.ac.cy
+Password => $2y$10$BYgyGxeVy0f4kBUIRHD9Iu9BKCVT0Hu3EJRJiEbqDqNFCx2/WRiui
+
+Memberships: 
+ID => 148
+CustomerID => 987120
+ExpirationDate => 2020-06-04
+Type => Unlimited
+
+Enrolment: 
+Id		 Username		 ClassID		 Date		 ClassName		 
+
+Log-in  Details: 
+Id	 Customer_ID	 Date	 
+499	 987120		 2020-05-04 20:21:08
+500	 987120		 2020-05-04 20:24:26
+
+Physical Sign In  Details: 
+Id				Email				Date				
+24				asavva01@cs.ucy.ac.cy		2020-05-04 20:24:27
+
+On Hold Memberships  Details: 
+Id				UserID				MembershipType				PrevExp				CalcExp				

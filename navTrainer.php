@@ -41,7 +41,7 @@ include 'initSeshTrainer.php';
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="announcements.html" tabindex="-1">Announcements</a>
+                    <a class="nav-link" href="TrainerAn.php" tabindex="-1">Announcements</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="statistics.php" tabindex="-1">Statistics</a>
@@ -61,7 +61,7 @@ include 'initSeshTrainer.php';
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/logout.php" tabindex="-1">
+                    <a class="nav-link" href="https://www.ironsky-app.com/php/logout.php" tabindex="-1">
                         <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a>
                 </li>
             </ul>

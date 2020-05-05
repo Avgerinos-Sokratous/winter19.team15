@@ -101,10 +101,10 @@ $flag=0;
         $subject='Password Deactivation';
         $message='Hello '. $name. ',
         
-To change your password press the following link: http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php.
+To change your password press the following link: https://www.ironsky-app.com/changepass.php.
 Your Security Password is '. $pass. '.';
-        $headers = "From: ironsky";
-         mail($email,$subject,$message,$headers);
+        $headers = "Ironsky App <info@ironsky-app.com>";
+         mail($email,$subject,$message,"From: ".$headers);
     echo "<script> 
               swal({
   title: 'Email Sent!',
@@ -113,7 +113,7 @@ Your Security Password is '. $pass. '.';
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";
@@ -146,10 +146,10 @@ Your Security Password is '. $pass. '.';
         $subject='Password Deactivation';
         $message='Hello, '. $name. ',
         
-To change your password press the following link: http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php.
+To change your password press the following link: https://www.ironsky-app.com/changepass.php.
 Your Security Password is '. $pass. '.';
-        $headers = "From: ironsky";
-         mail($email,$subject,$message,$headers);
+        $headers = "Ironsky App <info@ironsky-app.com>";
+         mail($email,$subject,$message,"From: ".$headers);
     echo "<script> 
               swal({
   title: 'Email Sent!',
@@ -158,7 +158,7 @@ Your Security Password is '. $pass. '.';
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";
@@ -194,10 +194,10 @@ Your Security Password is '. $pass. '.';
         $subject='Password Deactivation';
         $message='Hello, '. $name. ',
         
-To change your password press the following link: http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/changepass.php.
+To change your password press the following link: https://www.ironsky-app.com/changepass.php.
 Your Security Password is '. $pass. '.';
-        $headers = "From: ironsky";
-          mail($email,$subject,$message,$headers);
+        $headers = "Ironsky App <info@ironsky-app.com>";
+          mail($email,$subject,$message,"From: ".$headers);
     echo "<script> 
               swal({
   title: 'Email Sent!',
@@ -206,7 +206,7 @@ Your Security Password is '. $pass. '.';
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";
@@ -226,7 +226,7 @@ Your Security Password is '. $pass. '.';
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";

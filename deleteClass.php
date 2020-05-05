@@ -40,7 +40,7 @@ while($row = mysqli_fetch_assoc($result)) {
     <!-- Latest compiled JavaScript -->
     <script>
         $(function () {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navTrainer.php");
+            $("#includedContent").load("https://www.ironsky-app.com/navTrainer.php");
         });
     </script>
 

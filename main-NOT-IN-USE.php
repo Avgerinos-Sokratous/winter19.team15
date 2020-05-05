@@ -18,7 +18,7 @@
     <!-- Latest compiled JavaScript -->
     <script>
         $(function () {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.php");
+            $("#includedContent").load("https://www.ironsky-app.com/navbarclient.php");
         });
      </script>
     <title>Ironsky Fitness</title>
