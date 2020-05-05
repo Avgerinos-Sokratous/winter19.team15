@@ -34,7 +34,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      
@@ -74,7 +74,7 @@ echo "<script>
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";

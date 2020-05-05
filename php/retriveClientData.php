@@ -11,7 +11,7 @@ if($email == "" || $password == "" )
 }
 else
 {
-	//header("Location: http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/clientData.html");
+	//header("Location: https://www.ironsky-app.com/clientData.html");
 	$query = "SELECT * FROM Customer WHERE Email='$email'";
 	$result = mysqli_query($conn, $query)  or die("Could not connect database " .mysqli_error($conn));
 	if (!$result) 
@@ -130,7 +130,7 @@ $attachment
 
 	
 
-	echo "<script>setTimeout(\"location.href = ' http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/clientData.php';\",500);</script>";
+	echo "<script>setTimeout(\"location.href = ' https://www.ironsky-app.com/clientData.php';\",500);</script>";
 }
 
 ?>

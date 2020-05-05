@@ -19,7 +19,7 @@
     <!-- Latest compiled JavaScript -->
     <script>
     $(function () {
-        $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navTrainer.php");
+        $("#includedContent").load("https://www.ironsky-app.com/navTrainer.php");
     });
     </script>
 	<script src="./js/memb.js"></script>
@@ -163,7 +163,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      
@@ -194,8 +194,8 @@ Your Account has been activated. Your username is: ' . $email . '
 and your password is: ' . $pass . '
 Welcome to ironsky'.'
 We recommend that you change your password';
-$headers = "From: ironsky";
-mail($email,$subject,$message,$headers);
+$headers = "Ironsky App <info@ironsky-app.com>";
+mail($email,$subject,$message,"From: ".$headers);
 
 echo "<script> 
               swal({
@@ -205,7 +205,7 @@ echo "<script>
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";
@@ -235,7 +235,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      
@@ -259,8 +259,8 @@ Your Account has been activated. Your username is: ' . $email . '
 and your password is: ' . $pass . '
 Welcome to ironsky'.'
 We recommend that you change your password';
-$headers = "From: ironsky";
-mail($email,$subject,$message,$headers);
+$headers = "Ironsky App <info@ironsky-app.com>";
+mail($email,$subject,$message,"From: ".$headers);
 
 echo "<script> 
               swal({
@@ -270,7 +270,7 @@ echo "<script>
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/mainTrainer.php';
+      window.location.href = 'https://www.ironsky-app.com/mainTrainer.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
       </script>";

@@ -10,11 +10,17 @@
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.6.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
+			 
     <!-- Latest compiled JavaScript -->
     <title>Ironsky Fitness</title>
     <link rel="shortcut icon" href="images/ironsky2.png" type="image/png">
@@ -183,9 +189,10 @@
           </div>                          
         </div>
 </body>
+
 <script>
         $(function () {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.php");
+            $("#includedContent").load("https://www.ironsky-app.com/navbarclient.php");
         });
         
         var dayEmpty0 = false;
@@ -204,7 +211,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -237,7 +244,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -268,7 +275,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -287,7 +294,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -306,7 +313,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -325,7 +332,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
@@ -344,7 +351,7 @@
               var pos1 = data.lastIndexOf("End of Program"); 
               var j;
               var text = "";
-              for (j = pos; j < pos1+25; j++) 
+              for (j = pos; j < pos1+14; j++) 
               {
                   text += data[j];
               }
