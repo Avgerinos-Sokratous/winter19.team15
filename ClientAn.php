@@ -1,3 +1,8 @@
+<?php
+
+    include 'initSesh.php';
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +24,16 @@
     <title>Ironsky Fitness</title>
     <link rel="shortcut icon" href="images/ironsky2.png" type="image/png">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/support.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    
     <!--===============================================================================================-->
     
     <script>
         $(function () 
         {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbarclient.html");
+            $("#includedContent").load("https://www.ironsky-app.com/navbarclient.php");
         });
     </script>
     <style type="text/css">
@@ -41,7 +47,7 @@
 	</style>
 </head>
 
-<body style="background-color:#1E4072;">
+<body>
     
     <!-- START OF NAVIGATION BAR -->
 
@@ -50,12 +56,12 @@
     <!-- END OF NAVIGATION BAR -->
 
     
-    <div class="form-gap" style="background-color:#1E4072;">
+    <div class="form-gap">
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
  
 
-    <div class="container-contact100" style="background-color:#1E4072;">
+    <div class="container-contact100" style="background-color: rgba(255, 255, 255, 0)">
          <div class="row">
         
             <div class="col-lg-12 mx-auto"> 

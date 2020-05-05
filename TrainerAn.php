@@ -1,3 +1,8 @@
+<?php
+
+    include 'initSeshTrainer.php';
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +53,7 @@
     <script>
         $(function () 
         {
-            $("#includedContent").load("http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/navbar.html");
+            $("#includedContent").load("https://www.ironsky-app.com/navTrainer.php");
         });
     </script>
 
@@ -78,11 +83,11 @@
     <!-- END OF NAVIGATION BAR -->
 
     
-    <div class="form-gap" style="background-color:#1E4072;">
+    <div class="form-gap">
         <h4 class="logo ml-4 text-white"> I R O N S K Y <br>  <span> FITNESS </span> </h4>
     </div>
 	
-    <div class="container-contact100" style="background-color:#1E4072;">
+    <div class="container-contact100" style="background-color: rgba(255, 255, 255, 0)">
          
         <div class="row">
         
@@ -97,13 +102,13 @@
 		              <form class="contact100-form validate-form" method="POST" action= "php/PostAnnouncements.php">
             
 		                
-                            <label class="label-input100" for="subject">Subject *</label>
+                            <label class="label-input100" for="subject">Subject*</label>
                             <div class="wrap-input100 validate-input" data-validate="Subject is required">
                                 <input id="subject" class="input100" name="subject" placeholder="Write title of Subject">
                                 <span class="focus-input100"></span>
                             </div>
 
-                            <label class="label-input100" for="message">Message *</label>
+                            <label class="label-input100" for="message">Message*</label>
                             <div class="wrap-input100 validate-input" data-validate="Message is required">
                                 <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
                                 <span class="focus-input100"></span>

@@ -193,7 +193,7 @@ $message=$_POST["message"];
 
 if(($emailCustomer=="")||($emailTrainer=="")||($subject=="")||($message==""))
 {
-     header("Location:http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/supportTest.php");
+     header("Location:https://www.ironsky-app.com/supportTest.php");
         return false;
 }
 else
@@ -237,7 +237,7 @@ else
 
   showConfirmButton: true
 }, function(){
-      window.location.href = 'http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php';
+      window.location.href = 'https://www.ironsky-app.com/sign-in.php';
 }); 
      $('.sweet-overlay').css('background-color','#1E4072');
      
