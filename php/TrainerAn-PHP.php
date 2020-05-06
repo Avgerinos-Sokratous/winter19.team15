@@ -21,9 +21,10 @@ include 'connectDB.php';
     { 
 	
 	$Mydate = date('F d, Y ',strtotime($row["Date"]));
+    
 	echo "<tr>";
 	echo "<td>"."<strong>".$Mydate."</strong>"."</br><em>Subject: ".$row["Title"]."</em></br></br>".$row["Description"]."<br>"."</td>";
-	echo "<td class='fill'><a href= https://www.ironsky-app.com/php/deletePost.php?id=".$row['Id'].">DELETE </a></td>";
+	echo "<td class='fill'><a><button style='color:white' onclick="."confirmation(".$row[Id].")".">DELETE</button></a></td>"; 
 	echo "<td class='fill'><a href= https://www.ironsky-app.com/TrainerUpdate.php?id=".$row['Id'].">EDIT </a></td>";
 	echo "</tr>";
     }
@@ -32,9 +33,26 @@ include 'connectDB.php';
 
     // frees the memory associated with the result
      mysqli_free_result($result);
-	
+	      echo "<script>
+    function confirmation(opas) { 
+   console.log(opas);
+   var result = confirm('Are you sure?'); 
+   
+   if (result == true) { 
+   $.ajax({
+    data: {'id':opas},
+    url: 'https://www.ironsky-app.com/php/deletePost.php',
+    method: 'GET', // or GET
+    success: function() {
+    location.reload();
+    }
+    });
+   }
+   }
+</script>";
     }
     
+
 $conn->close();
 
 ?>
