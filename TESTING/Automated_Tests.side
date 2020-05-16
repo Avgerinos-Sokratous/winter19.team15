@@ -2,7 +2,7 @@
   "id": "c642a563-d021-475a-89da-c4c1830eaa43",
   "version": "2.0",
   "name": "Automated_Tests",
-  "url": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+  "url": "https://www.ironsky-app.com/sign-in.php",
   "tests": [{
     "id": "657cac98-9fec-49df-adf1-1e1293913193",
     "name": "Programs",
@@ -10,7 +10,7 @@
       "id": "6cfbe638-3e5a-49df-b9d0-7db5fcc8e28d",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -226,54 +226,6 @@
       "target": "handle=${root}",
       "targets": [],
       "value": ""
-    }, {
-      "id": "c76c4760-2f7d-43af-bf11-654be263b397",
-      "comment": "",
-      "command": "click",
-      "target": "css=#block-893f16c5fba2af05fb90 p",
-      "targets": [
-        ["css=#block-893f16c5fba2af05fb90 p", "css:finder"],
-        ["xpath=//div[@id='block-893f16c5fba2af05fb90']/div/p", "xpath:idRelative"],
-        ["xpath=//div[7]/div[2]/div/div/div/div/div/div/div/div/p", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "44a4b637-ebc0-4002-9e8d-f3934a9da8c1",
-      "comment": "",
-      "command": "click",
-      "target": "css=#block-893f16c5fba2af05fb90 a:nth-child(6)",
-      "targets": [
-        ["css=#block-893f16c5fba2af05fb90 a:nth-child(6)", "css:finder"],
-        ["xpath=(//a[contains(text(),'(VIDEO)')])[11]", "xpath:link"],
-        ["xpath=//div[@id='block-893f16c5fba2af05fb90']/div/p/a[2]", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, 'https://youtu.be/5jTcx3pJTJU')])[4]", "xpath:href"],
-        ["xpath=//div[7]/div[2]/div/div/div/div/div/div/div/div/p/a[2]", "xpath:position"]
-      ],
-      "value": "",
-      "opensWindow": true,
-      "windowHandleName": "win3719",
-      "windowTimeout": 2000
-    }, {
-      "id": "f05eb43d-1353-4104-add9-d6bbb5c0d5d9",
-      "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${win3719}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "806abd5b-3177-4a29-bf4a-513a68b8b1c2",
-      "comment": "",
-      "command": "close",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "b0c9d028-f9d2-4cc1-b17b-3114fc988b8c",
-      "comment": "",
-      "command": "selectWindow",
-      "target": "handle=${root}",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "75e672a3-b412-489b-818f-58f1ca18f017",
@@ -282,7 +234,7 @@
       "id": "071e0568-4ad2-4ad4-8d63-255fef11416f",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -855,7 +807,7 @@
       "id": "f970a480-8c39-4078-b0ad-5b218fa17d9b",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -1209,7 +1161,7 @@
       "id": "c22c8605-cc7a-458b-bd9b-6be2f5588ca6",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -1299,44 +1251,6 @@
       ],
       "value": ""
     }, {
-      "id": "eff1edea-7a09-4001-b631-4d979332245b",
-      "comment": "",
-      "command": "click",
-      "target": "id=email",
-      "targets": [
-        ["id=email", "id"],
-        ["name=emailCustomer", "name"],
-        ["css=.wrap-input100:nth-child(3) > #email", "css:finder"],
-        ["xpath=//input[@id='email']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "cbfc2919-c32e-4faf-a503-dc4c20d0af88",
-      "comment": "",
-      "command": "type",
-      "target": "id=email",
-      "targets": [
-        ["id=email", "id"],
-        ["name=emailCustomer", "name"],
-        ["css=.wrap-input100:nth-child(3) > #email", "css:finder"],
-        ["xpath=//input[@id='email']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "mkaili02@cs.ucy.ac.cy"
-    }, {
-      "id": "47144b4d-dc23-45a4-85a6-fca6fa337b2f",
-      "comment": "",
-      "command": "type",
-      "target": "name=emailTrainer",
-      "targets": [
-        ["name=emailTrainer", "name"],
-        ["css=.wrap-input100:nth-child(5) > #email", "css:finder"],
-        ["xpath=(//input[@id='email'])[2]", "xpath:attributes"],
-        ["xpath=//div[2]/input", "xpath:position"]
-      ],
-      "value": "kailimichalis7@gmail.com"
-    }, {
       "id": "d697df63-cdc3-4ff3-ad72-61af69f24784",
       "comment": "",
       "command": "type",
@@ -1394,7 +1308,7 @@
         ["linkText=Privacy Policy", "linkText"],
         ["css=div:nth-child(5) > .txt3", "css:finder"],
         ["xpath=//a[contains(text(),'Privacy Policy')]", "xpath:link"],
-        ["xpath=//a[@href='http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/privacyPolicy.php']", "xpath:href"],
+        ["xpath=//a[@href='https://www.ironsky-app.com/privacyPolicy.php']", "xpath:href"],
         ["xpath=//div[5]/a", "xpath:position"],
         ["xpath=//a[contains(.,'Privacy Policy')]", "xpath:innerText"]
       ],
@@ -1408,7 +1322,7 @@
         ["linkText=Go to Site", "linkText"],
         ["css=.btn-info", "css:finder"],
         ["xpath=//a[contains(text(),'Go to Site')]", "xpath:link"],
-        ["xpath=//a[@href='http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/pastPrograms.php']", "xpath:href"],
+        ["xpath=//a[@href='https://www.ironsky-app.com/pastPrograms.php']", "xpath:href"],
         ["xpath=//font/font/a", "xpath:position"],
         ["xpath=//a[contains(.,'Go to Site')]", "xpath:innerText"]
       ],
@@ -1421,7 +1335,7 @@
       "id": "bdd77252-f1cf-4c77-ae92-1ea8ad587cb6",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -1748,7 +1662,7 @@
       "id": "e9bcf2ca-5545-4ef6-b60c-100608376337",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -1981,7 +1895,7 @@
         ["linkText=Logout", "linkText"],
         ["css=.nav .nav-link", "css:finder"],
         ["xpath=//div[@id='navbarTogglerDemo02']/ul[2]/li/a", "xpath:idRelative"],
-        ["xpath=//a[@href='http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/php/logout.php']", "xpath:href"],
+        ["xpath=//a[@href='https://www.ironsky-app.com/php/logout.php']", "xpath:href"],
         ["xpath=//ul[2]/li/a", "xpath:position"],
         ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
       ],
@@ -1994,7 +1908,7 @@
       "id": "876f789d-0cca-44d5-8675-1fa4196023e0",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -2226,7 +2140,7 @@
       "id": "59e5810f-1c10-4ad5-aaaf-fc535b249206",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -2513,7 +2427,7 @@
       "id": "9acca6ce-4d4f-48e2-87fb-f34c2727756e",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php",
+      "target": "https://www.ironsky-app.com/sign-in.php",
       "targets": [],
       "value": ""
     }, {
@@ -3204,7 +3118,7 @@
       "id": "73b0b947-3fa1-4b05-be5b-86ae7d2ac284",
       "comment": "",
       "command": "open",
-      "target": "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/clientData.php",
+      "target": "https://www.ironsky-app.com/clientData.php",
       "targets": [],
       "value": ""
     }, {
@@ -3338,6 +3252,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://cproject.in.cs.ucy.ac.cy/", "http://cproject.in.cs.ucy.ac.cy/ironsky/winter19.team15/sign-in.php"],
+  "urls": ["http://cproject.in.cs.ucy.ac.cy/", "https://www.ironsky-app.com/sign-in.php"],
   "plugins": []
 }
